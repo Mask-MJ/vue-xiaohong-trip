@@ -1,0 +1,21 @@
+:root {
+  --primary-color: #ff9854;
+
+  /* 全局修改: 任何地方只要用到-van-tabbar-item-icon-size都会被修改掉 */
+  /* --van-tabbar-item-icon-size: 30px !important; */
+
+  /* 全局修改:修改search样式  */
+  --van-search-left-icon-color: var(--primary-color) !important;
+}
+
+.top-page {
+  position: relative;
+  z-index: 2; /*z-index:2代表比tabber的1大,所以会覆盖tabber*/
+  height: 100vh; /*100vh代表100%的视口高度*/
+  background-color: #fff;
+  overflow-y: auto; /*overflow-y: auto;代表超出部分会出现滚动条*/
+}
+
+body {
+  font-size: 14px;
+}
