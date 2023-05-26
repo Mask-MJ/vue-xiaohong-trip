@@ -2,7 +2,6 @@
   <div class="city top-page">
     <!-- 1. 搜索框 -->
     <van-search
-      class="search"
       v-model="searchValue"
       shape="round"
       placeholder="城市/区域/位置"
@@ -27,14 +26,6 @@ const cancelClick = () => {
 </script>
 
 <style lang="less" scoped>
-.search {
-  :deep(.van-field__body) {
-    .van-icon {
-      color: #f40 !important;
-      z-index: 999;
-    }
-  }
-}
 // .city {
 //   position: relative;
 //   z-index: 2; //z-index:2代表比tabber的1大,所以会覆盖tabber
