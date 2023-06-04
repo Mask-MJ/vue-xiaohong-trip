@@ -23,7 +23,8 @@
 </template>
 
 <script setup>
-import { computed } from "@vue/reactivity";
+// import { computed } from "@vue/reactivity";
+import { computed, defineProps } from "vue";
 
 //定义props, 用于接收父组件传递的数据
 const props = defineProps({

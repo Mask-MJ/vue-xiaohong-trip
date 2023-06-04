@@ -24,8 +24,9 @@
 <script setup>
 import useMainStore from "@/stores/modules/main";
 import { storeToRefs } from "pinia";
-import { computed } from "@vue/reactivity";
+// import { computed } from "@vue/reactivity";
 import { formatMonthDay } from "@/utils/format_date";
+import { computed } from "vue";
 
 const mainStore = useMainStore();
 const { startDate, endDate } = storeToRefs(mainStore);

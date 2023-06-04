@@ -1,5 +1,5 @@
 <template>
-  <div class="notice">
+  <div class="notice" v-if="orderRules.length">
     <DetailSection title="预定须知">
       <div class="notice-inner">
         <template v-for="(item, index) in orderRules" :key="index">

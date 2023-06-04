@@ -1,5 +1,5 @@
 <template>
-  <div class="swipe">
+  <div class="swipe" v-if="swipeData.length">
     <van-swipe class="swipe-list" :autoplay="3000" indicator-color="white">
       <template v-for="(item, index) in swipeData" :key="index">
         <van-swipe-item class="item">

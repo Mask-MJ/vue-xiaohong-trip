@@ -65,13 +65,14 @@
 
 <script setup>
 import { ref } from "vue";
-import { computed } from "@vue/reactivity";
+// import { computed } from "@vue/reactivity";
 import { useRouter } from "vue-router";
 import { storeToRefs } from "pinia";
 import useCityStore from "@/stores/modules/city";
 import { formatMonthDay, getDiffDays } from "@/utils/format_date.js";
 import useHomeStore from "@/stores/modules/home";
 import uesMainStore from "@/stores/modules/main";
+import { computed } from "vue";
 
 //定义props
 const props = defineProps({

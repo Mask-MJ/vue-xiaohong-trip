@@ -1,5 +1,5 @@
 <template>
-  <div class="intro">
+  <div class="intro" v-if="Object.keys(priceIntro).length">
     <DetailSection :title="`${props.priceIntro.title}`">
       <div class="intro-inner">{{ props.priceIntro.introduction }}</div>
     </DetailSection>

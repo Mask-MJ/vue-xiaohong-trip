@@ -34,7 +34,8 @@ const { houseList } = storeToRefs(homeStore);
 const router = useRouter();
 const itemClick = (item) => {
   console.log("itemClick:", item.houseId);
-  router.push("/detail/" + item.houseId);
+  // router.push("/detail/" + item.houseId);
+  router.push("/detail-practice/" + item.houseId);
 };
 </script>
 

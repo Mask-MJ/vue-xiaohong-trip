@@ -1,5 +1,5 @@
 <template>
-  <div class="landlord">
+  <div class="landlord" v-if="Object.keys(landlord).length">
     <!-- 房屋介绍 组件 -->
     <DetailSection title="房屋介绍" more-text="查看房东主页">
       <div class="intro">
@@ -83,6 +83,7 @@ console.log(props.landlord);
         img {
           width: 54px;
           height: 54px;
+          margin-right: 5px;
         }
       }
       .info {

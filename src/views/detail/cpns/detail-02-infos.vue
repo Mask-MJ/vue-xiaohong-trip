@@ -1,5 +1,5 @@
 <template>
-  <div class="infos">
+  <div class="infos" v-if="Object.keys(topInfos).length">
     <div class="name">{{ topInfos.houseName }}</div>
     <div class="tags">
       <template v-for="(item, index) in topInfos.houseTags" :key="index">

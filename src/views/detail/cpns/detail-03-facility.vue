@@ -1,5 +1,5 @@
 <template>
-  <div class="facility">
+  <div class="facility" v-if="Object.keys(houseFacility).length">
     <!-- 房屋设施组件 -->
     <DetailSection title="房屋设施" more-text="查看全部设施">
       <div class="facility-inner">

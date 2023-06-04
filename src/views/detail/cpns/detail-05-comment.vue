@@ -1,5 +1,5 @@
 <template>
-  <div class="comment">
+  <div class="comment" v-if="Object.keys(comment).length">
     <!-- 热门评论 组件 -->
     <DetailSection
       title="热门评论"
