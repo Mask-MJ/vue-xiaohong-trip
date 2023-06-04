@@ -22,20 +22,36 @@
       </van-tabs>
     </div>
     <div class="content">
-      <template v-for="item in currentGroup.cities">
-        <div>列表数据{{ item }}</div>
+      <!-- <cityGroup :group-data="currentGroup" /> -->
+      <template v-for="(value, key, index) in allCities">
+        <!-- <h2 v-show="tabActive === key" :group-data="currentGroup"> {{ value.title }} </h2> -->
+        <cityGroup v-show="tabActive === key" :group-data="value" />
       </template>
+      <!--抽取到子组件views/city/cpns/city-group.vue中, 并通过import引入和组件挂载来使用, 父子传递数据通过props,通过v-bind绑定数据;
+        遍历通过计算属性获取到的城市数据currentGroup,在currentGroup对象中获取cities数据 -->
+      <!-- <template v-for="(group, index) in currentGroup?.cities" :key="index">
+        <div class="group-item">
+          <h2 class="title">标题:{{ group.group }}</h2>
+          <div class="list">
+            <template v-for="(city, indey) in group.cities" :key="indey">
+              <div class="city">{{ city.cityName }}</div>
+            </template>
+          </div>
+        </div>
+      </template> -->
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from "vue";
+import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 // import { getCityAll } from "@/services/modules/city";
 import { getCityAll } from "@/services";
 import useCityStore from "@/stores/modules/city";
-import { storeToRefs } from "pinia";
+
+import cityGroup from "./cpns/city-group.vue";
 
 const router = useRouter();
 
@@ -74,6 +90,10 @@ const currentGroup = computed(() => allCities.value[tabActive.value]);
 //   overflow-y: auto; //overflow-y: auto;代表超出部分会出现滚动条
 // }
 .city {
+  .top {
+    position: relative;
+    z-index: 3; //z-index:3代表比tabber的1大,所以会覆盖tabber
+  }
   .content {
     //布局滚动条: 只滚动内容区域,不滚动头部 ; overflow-y: auto 代表超出部分会出现滚动条
     height: calc(100vh - 54px - 44px);
